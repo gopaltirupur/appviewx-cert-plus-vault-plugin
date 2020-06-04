@@ -26,7 +26,7 @@ This plugin is to generate the certificates from Vault using AppViewX.
 ```
 3. Start the vault by specifying the '.hcl' configuration file
 ```
-./vault-1.2.3 server -log-level=debug -dev -config=vault-config.hcl > ./logs/vault-server.log 2>&1 &
+./vault-1.2.3 server -log-level=debug -config=vault-config.hcl > ./logs/vault-server.log 2>&1 &
 ```
 4. Set the Environment Variable
 ```
