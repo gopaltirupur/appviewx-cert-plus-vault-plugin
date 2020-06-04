@@ -92,7 +92,7 @@
 		```
 	*	ENTRUST
 		```
-		./vault-1.2.3 write appviewx-pki/ca/ca_entrust certificate_authority=Entrust ca_setting_name="MarriottTestSubCA1" vendor_specific_details={caName=MarriottTestSubCA1,certProfile="TLS Client & Serv Auth Cert Exp"} division_id=80312 certificate_type="Standard" connector_name="Entrust CA connector" description="description";
+		./vault-1.2.3 write appviewx-pki/ca/ca_entrust certificate_authority=Entrust ca_setting_name="userTestSubCA1" vendor_specific_details={caName=userTestSubCA1,certProfile="TLS Client & Serv Auth Cert Exp"} division_id=80312 certificate_type="Standard" connector_name="Entrust CA connector" description="description";
 		```
 *	LIST
 	```
@@ -108,7 +108,7 @@
 > #### CERT_SETTINGS ####
 *	CREATE
 	```
-	./vault-1.2.3 write appviewx-pki/cert_settings/marriott_digicert_settings file=C:\\fakepath\\testdigicert.appviewx.com.csr hash_function=SHA256  key_type=RSA   bit_length=2048 mail_address=aravind.b@appviewx.com country=US organization="AppViewX Inc." organization_unit="Avx" certificate_categories=Server certificate_groupName=Default category=Server validity_in_days=365;
+	./vault-1.2.3 write appviewx-pki/cert_settings/user_digicert_settings file=C:\\fakepath\\testdigicert.appviewx.com.csr hash_function=SHA256  key_type=RSA   bit_length=2048 mail_address=aravind.b@appviewx.com country=US organization="AppViewX Inc." organization_unit="Avx" certificate_categories=Server certificate_groupName=Default category=Server validity_in_days=365;
 	```
 *	LIST
 	```
@@ -116,7 +116,7 @@
 	```
 *	READ
 	```
-	./vault-1.2.3 read appviewx-pki/cert_settings/marriott_digicert_settings
+	./vault-1.2.3 read appviewx-pki/cert_settings/user_digicert_settings
 	```
 
 ------
@@ -124,11 +124,11 @@
 >#### CERTIFICATE ####
 *	CREATE
 	```
-	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault580.appviewx.com ca=ca_appviewx cert_settings=marriott_digicert_settings
+	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault580.appviewx.com ca=ca_appviewx cert_settings=user_digicert_settings
 
-	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault581.appviewx.com ca=ca_digicert cert_settings=marriott_digicert_settings
+	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault581.appviewx.com ca=ca_digicert cert_settings=user_digicert_settings
 
-	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault582.appviewx.com ca=ca_entrust cert_settings=marriott_digicert_settings
+	./vault-1.2.3 write appviewx-pki/issue/appviewx_3_15_144_7 common_name=testdigicertvault582.appviewx.com ca=ca_entrust cert_settings=user_digicert_settings
 	```
 *	LIST
 	```	
